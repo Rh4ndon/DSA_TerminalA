@@ -1,21 +1,28 @@
 import java.io.FileWriter;
 import com.opencsv.*;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
-import javax.swing.table.DefaultTableModel;
+
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
+
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.PrintStream;
-import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
 
 
-public class dsaMotorPH{
+
+public class dsaMotorPH extends sort_bydate{
     // variables for employee details
     static String engine_num = "";
     static String date_entered = "";
@@ -40,7 +47,7 @@ public class dsaMotorPH{
         System.out.printf("+---------------------------------------------+\n");
         System.out.println("[ 1 ] : Add Stocks");
         System.out.println("[ 2 ] : Delete Stock");
-        System.out.println("[ 3 ] : Sort By Brand");
+        System.out.println("[ 3 ] : Sort By Month");
         System.out.println("[ 4 ] : Search Stock");
         System.out.println("[ 5 ] : Exit\n");
         
@@ -63,7 +70,10 @@ public class dsaMotorPH{
             break;
 
             case "3":
-            
+            sort_bydate.main(null);
+            System.out.println("File was sorted by month");
+            clear_screen();
+            main_menu();
                 break;
             case "4":
             clear_screen();
@@ -186,6 +196,8 @@ public class dsaMotorPH{
         }
     }
 
+    
+
 
     private static void input_data() throws IOException {
         try (// for adding data to our csv file
@@ -193,7 +205,8 @@ public class dsaMotorPH{
             System.out.println("Enter Engine Number");
             String engineNo = details.nextLine();
 
-            System.out.println("Enter Date Entered");
+            System.out.println("Enter Date Entered format MM/dd/yyyy");
+            System.out.println("ex.01/01/2001");
             String date = details.nextLine();
 
             System.out.println("Enter Stock Label");
@@ -221,5 +234,8 @@ public class dsaMotorPH{
         
    }
 
+
+   
    
 }
+
