@@ -1,28 +1,15 @@
 import java.io.FileWriter;
 import com.opencsv.*;
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
 import java.util.Scanner;
-
-
-
 import java.io.BufferedReader;
-
 import java.io.File;
-
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.text.SimpleDateFormat;
 
 
 
-public class dsaMotorPH extends sort_bydate{
+
+public class inventory_management extends sort_bydate{
     // variables for employee details
     static String engine_num = "";
     static String date_entered = "";

@@ -1,0 +1,55 @@
+DSA Terminal Assessment 
+
+Motor PH has 4 requirements about the Inventory Management
+
+1.) Add new stocks
+2.)Delete incorrect stocks
+3.)Sort stocks according to brand
+4.)Search for an existing inventory using available information as criteria
+
+The group propose solution for each requirements and make a console base application for the Inventory System
+
+The main app was named inventory_management.java
+the main menu of the app use switch case
+1st for adding stock, 2nd for deleting stock, 3rd for Sorting Stock by Date, and 4th for Searching stock base on engine number
+
+1.) Adding new stock
+The application uses array to store data then inject to the csv file
+the process is like this;
+    1. Enter data using Scanner.
+    2. Using CSV Writer and File Writer it opens the csv file it uses append true so that the record will be written at the new row, it uses comma as separator and CSWriter.NO_QUOTES_CHARACTER so that the program will not write quotes on every word recorded on csv file .
+    3. Data from input was stored in an array {engine number,date,brand,status}
+    4. Using writeNext it records the data to the new row of the csv file, then adwriter.flush flushes the data from writer to file.
+    5. Then it prints "Data saved to notice that the process was done.
+2.) Deleting stock
+The application uses array to store data on a row of csv file
+The process goes like this;
+    1. User will enter the engine number that it wants to delete using scanner.
+    2. Using CSVReader and FileReader it open the csv file.
+    3. The program will create temporary file 
+    4. Using CSVWriter and FileWriter it will transfer the data from the original csv file to the temporary file.
+    5. Using while loop it continues to write data to the temporary file the using if statement when the program encounters the engine number that user wants to delete the row of the stock will be bypassed by the program
+    then it will continue to write the next row 
+    6. Once all data was written we close the writer then using File(filename.csv).delete() the program deleted the original file
+    7. Then it renames the temp file as what the original file was then the temporary file became the original file
+3.) Sorting Stock by date
+The application uses array to store data of a row and uses link list to store the arrays of row that we will compare and sort
+The process on 1 click will goes like this;
+    1. Using File it opens the original file then create temporary file
+    2. Using list it gathers all list of row.
+    3. With the for loop it reads the data on each row then stores on an array
+    4. while in the link list and like an insertion sort compareTo used in the program compares the second columns on each row because it is where that data for date was written,
+        we use Date.parse to convert the dates into an integer so that we can possible compare the dates and sort them 
+        then using SimpleDateFormat we convert the integer dates into readable date (MM/dd/yyy) before putting it back to the array of the row.
+    5. once the date is set on a row it will go back to the link list once all rows inside the link list was sorted File writes the data to the temporary file.
+    6. then after data is written to the new file it deletes the old one then rename the new file as the old then it became the original file but sorted by date.
+
+4.) Searching Stock by engine number
+the program uses array to store data of a row being search
+then with the use of engine number as an ID of stock the process goes like this;
+    1. Using BufferReader and FileReader it scans the csv file.
+    2. We use while loop while reading the csv file by row.
+    3. Each row is stored in an array to scan for the engine number being search.
+    4. we use if stated so that if the engine number on a row is equal to the engine number being search it will store the row datum in an array.
+    5. then each array data is stored on a variable.
+    5. using Sytem.out.print we show the stock being search to the user.
