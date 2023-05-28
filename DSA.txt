@@ -29,7 +29,7 @@ The process goes like this;
     3. The program will create temporary file 
     4. Using CSVWriter and FileWriter it will transfer the data from the original csv file to the temporary file.
     5. Using while loop it continues to write data to the temporary file the using if statement when the program encounters the engine number that user wants to delete the row of the stock will be bypassed by the program
-    then it will continue to write the next row 
+    then it will continue to write the next row in that case the row was deleted.
     6. Once all data was written we close the writer then using File(filename.csv).delete() the program deleted the original file
     7. Then it renames the temp file as what the original file was then the temporary file became the original file
 3.) Sorting Stock by date
