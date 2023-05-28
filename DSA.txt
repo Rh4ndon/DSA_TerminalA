@@ -38,7 +38,7 @@ The process on 1 click will goes like this;
     1. Using File it opens the original file then create temporary file
     2. Using list it gathers all list of row.
     3. With the for loop it reads the data on each row then stores on an array
-    4. while in the link list and like an insertion sort compareTo used in the program compares the second columns on each row because it is where that data for date was written,
+    4. while in the link list and like an bubble sort compareTo used in the program compares the second columns on each row because it is where that data for date was written,
         we use Date.parse to convert the dates into an integer so that we can possible compare the dates and sort them 
         then using SimpleDateFormat we convert the integer dates into readable date (MM/dd/yyy) before putting it back to the array of the row.
     5. once the date is set on a row it will go back to the link list once all rows inside the link list was sorted File writes the data to the temporary file.
