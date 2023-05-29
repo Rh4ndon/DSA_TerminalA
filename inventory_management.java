@@ -65,13 +65,14 @@ public class inventory_management extends sort_bydate{
             case "4":
             clear_screen();
             search();             
-            main_menu();
+            
             break;
             case "5":
                 
                 System.out.println("\nGoodbye!");
                 System.exit(0);
                 break;
+
             default:
                 
                 System.out.println("Invalid entry");
@@ -117,7 +118,8 @@ public class inventory_management extends sort_bydate{
  
                  if(stockDetails[0].equals(engine)) {
                     
-                     
+                     // In an array arr{data[0],data[1],data[2]....}
+                     //stockDetails{}
                      engine_num = stockDetails[0];
                      date_entered = stockDetails[1];
                      stock_label = stockDetails[2];
@@ -146,10 +148,6 @@ public class inventory_management extends sort_bydate{
                  }
                      
                      
-                 
-                 else {
-                     System.out.println("No Record of Data to Show");
-                 }
              }
  
              br.close();
@@ -185,10 +183,10 @@ public class inventory_management extends sort_bydate{
 
     
 
-
+    // Adding stocks
     private static void input_data() throws IOException {
         try (// for adding data to our csv file
-        Scanner details = new Scanner(System.in)) {
+            Scanner details = new Scanner(System.in)) {
             System.out.println("Enter Engine Number");
             String engineNo = details.nextLine();
 
